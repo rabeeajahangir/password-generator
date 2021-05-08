@@ -32,9 +32,12 @@ function lengthOptions() {
         }
       }
 
-
-      //option to use lowercase characters
+// function to determine which characters to use
 function charOptions() {
+
+
+
+  //option to use lowercase characters
   lowerCaseInput =
       confirm("Would you like to include lowercase characters?");
   
