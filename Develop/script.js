@@ -1,5 +1,17 @@
 // Assignment code here
+var passwordLength;
 
+var lowerCaseInput;
+var upperCaseInput;
+var numericCharInput;
+var specialCharInput;
+
+
+//declaring arrays of character options
+var upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+var lowerCase = ['abcdefghijklmnopqrstuvwxyz'];
+var numeric = ['0123456789'];
+var specialChar= ['!@#$%^&*()_+'];
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
