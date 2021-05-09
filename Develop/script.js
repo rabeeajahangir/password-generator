@@ -138,3 +138,18 @@ function generatePassword() {
 console.log(newPassword);
 }
 
+//Provided code//
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+//Write password to the #password input
+function writePassword() {
+  reset();
+  passwordLength();
+  generatePassword();
+  var newPasswordText = document.querySelector("#password");
+  newPasswordText.value = newPassword;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
