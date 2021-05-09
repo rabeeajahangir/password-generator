@@ -1,20 +1,33 @@
 // Assignment code here
 
-
+// assigning global variables
 var passwordLength;
 var lowerCaseInput;
 var upperCaseInput;
 var numericCharInput;
 var specialCharInput;
 
+var characterString = "";
+var newPassword = "";
+
+//variables for character options
+var lowerCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+var upperCase = ['abcdefghijklmnopqrstuvwxyz'];
+var numbers = ['0123456789'];
+var specialChar = ['!@#$%^&*()_+'];
+
+// variable to fill in the new password with user preferences
+var newPasswordCharacters = [];
 
 
-// character options
-var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var specialChar = [' ', '!', '"', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~']
-
+ //empty array to add characters according to user preference
+ function reset() {
+  var newPasswordCharacters = [];
+  var newPassword = "";
+  var characterString = "";
+   }
+  
+  
 
 
 
@@ -28,7 +41,7 @@ function lengthOptions() {
     charOptions();
         }
         
-        else { (passwordLength < 8 || passwordLength > 128) 
+        else { (passwordLength < 8 || passwordLength > 128 || characterLength === "null" || characterLength === " ")  
           alert("Choose a value between 8 and 128.");
           lengthOptions();
         }
@@ -47,9 +60,8 @@ function charOptions() {
       console.log("Yes, include lowercase");
   
     } else {
-      
+      (!lowerCaseInput)
       alert("Okay, don't include lowercase characters.");
-      lowerCaseInput = false;
     };
   
 
@@ -61,9 +73,8 @@ function charOptions() {
       alert("Okay, include uppercase characters.");
       console.log("Yes, include uppercase");
     } else {
-      
+      (!upperCaseInput)
       alert("Okay, don't include uppercase characters.");
-      upperCaseInput = false;
     };
   
     // option to use special characters
@@ -74,9 +85,8 @@ function charOptions() {
       alert("Okay, include special characters.");
       console.log("Yes, include special characters");
     } else {
-      
+      (!specialCharInput)
       alert("Okay, don't include special characters.");
-      specialCharInput = false;
     };
   
     //choose to include numbers
@@ -87,25 +97,14 @@ function charOptions() {
       alert("Okay, include numbers.");
       console.log("Yes, include numbers");
     } else {
+      (!numbers)
       alert("Okay, don't include numbers.");
-      numbers = false;
     }
     if (lowerCaseInput === false && upperCaseInput === false && specialCharInput === false && numbers === false) {
       alert("Choose atleast one criteria to generate a password!");
       charOptions();
     }
   };
-
-
-
-
- //empty array to add characters according to user preference
- function reset() {
-var newPasswordCharacters = [];
-var newPassword = '';
-var characterString = '';
- }
-
 
 
 // inserting values to arrays according to user preference
