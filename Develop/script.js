@@ -27,9 +27,6 @@ var newPasswordCharacters = [];
   var characterString = "";
    }
   
-  
-
-
 
 // determining password length
 function lengthOptions() {
@@ -124,7 +121,7 @@ function generatePassword() {
     newPasswordCharacters.push(specialChar);
 }
 
-  if (numbers=== true) {
+  if (numbers === true) {
     //add numbers to array
     newPasswordCharacters.push(numbers);
 }
@@ -144,7 +141,7 @@ var generateBtn = document.querySelector("#generate");
 //Write password to the #password input
 function writePassword() {
   reset();
-  passwordLength();
+  lengthOptions();
   generatePassword();
   var newPasswordText = document.querySelector("#password");
   newPasswordText.value = newPassword;
