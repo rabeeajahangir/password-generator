@@ -7,12 +7,17 @@ var numericCharInput;
 var specialCharInput;
 
 
-//declaring arrays of character options
-var upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-var lowerCase = ['abcdefghijklmnopqrstuvwxyz'];
-var numbers = ['0123456789'];
-var specialChar= ['!@#$%^&*()_+'];
 
+//declaring arrays of character options
+var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var specialChar = [' ', '!', '"', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~']
+
+ //empty array to add characters according to use preference
+var newPasswordCharacters = [];
+var newPassword = '';
+var characterString = '';
 
 
 // determining password length
@@ -98,20 +103,31 @@ function charOptions() {
 
 
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
 
+
+
+
+
+// inserting values to arrays according to user preference
+function generatePassword() {
+  if (lowerCaseInput === true) {
+    //add lowercase to array
+    newPasswordCharacters.push(lowerCase);
 }
 
+  if (upperCaseInput === true) {
+    //add uppercase to array
+    newPasswordCharacters.push(upperCase);
+}
 
+  if (specialCharInput === true) {
+    //add special characters to array
+    newPasswordCharacters.push(specialChar);
+}
 
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+  if (numbers=== true) {
+    //add numbers to array
+    newPasswordCharacters.push(numbers);
+}
