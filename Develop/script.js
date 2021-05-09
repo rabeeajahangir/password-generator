@@ -1,6 +1,7 @@
 // Assignment code here
-var passwordLength;
 
+
+var passwordLength;
 var lowerCaseInput;
 var upperCaseInput;
 var numericCharInput;
@@ -8,22 +9,18 @@ var specialCharInput;
 
 
 
-//declaring arrays of character options
+// character options
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = [' ', '!', '"', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~']
 
- //empty array to add characters according to use preference
-var newPasswordCharacters = [];
-var newPassword = '';
-var characterString = '';
+
 
 
 // determining password length
 function lengthOptions() {
-  passwordLength =
-     prompt("How many characters would you like?");
+  passwordLength = prompt("How many characters would you like?");
       passwordLength = Number(passwordLength);
       console.log(passwordLength);
         if (passwordLength >= 8 && passwordLength <= 128) {
@@ -37,10 +34,9 @@ function lengthOptions() {
         }
       }
 
+
 // function to determine which characters to use
 function charOptions() {
-
-
 
   //option to use lowercase characters
   lowerCaseInput =
@@ -103,10 +99,12 @@ function charOptions() {
 
 
 
-
-
-
-
+ //empty array to add characters according to user preference
+ function reset() {
+var newPasswordCharacters = [];
+var newPassword = '';
+var characterString = '';
+ }
 
 
 
@@ -131,3 +129,12 @@ function generatePassword() {
     //add numbers to array
     newPasswordCharacters.push(numbers);
 }
+
+
+ // loop to choose characters with passwordLength
+ for (var i = 0; i < passwordLength; i ++) {
+  newPassword = newPassword.concat(characterString[Math.floor(Math.random() * characterString.length)]);  
+}
+console.log(newPassword);
+}
+
