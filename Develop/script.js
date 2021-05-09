@@ -22,111 +22,109 @@ var newPasswordCharacters = [];
 
  //empty array to add characters according to user preference
  function reset() {
-  var newPasswordCharacters = [];
   var newPassword = "";
   var characterString = "";
-   }
+  var newPasswordCharacters = [];
+}
   
 
 // determining password length
 function lengthOptions() {
-  passwordLength = prompt("How many characters would you like?");
-      passwordLength = Number(passwordLength);
-      console.log(passwordLength);
-        if (passwordLength >= 8 && passwordLength <= 128) {
-          alert(" Your password will be " +passwordLength+ " characters.");
-    charOptions();
-        }
-        
-        else { (passwordLength < 8 || passwordLength > 128 || characterLength === "null" || characterLength === " ")  
-          alert("Choose a value between 8 and 128.");
-          lengthOptions();
-        }
-      }
+passwordLength = prompt("How many characters would you like?");
+passwordLength = Number(passwordLength);
+ console.log(passwordLength);
+if (passwordLength >= Number (8) && passwordLength <= Number (128) {
+alert(" Your password will be " +passwordLength+ " characters.");
+charOptions();
+
+}else { (passwordLength < Number(8) || passwordLength > Number(128) || characterLength === "null" || characterLength === " ")  
+alert("Choose a value between 8 and 128.");
+lengthOptions();
+}
+}
 
 
 // function to determine which characters to use
 function charOptions() {
 
-  //option to use lowercase characters
-  lowerCaseInput =
-      confirm("Would you like to include lowercase characters?");
+//option to use lowercase characters
+lowerCaseInput =
+confirm("Would you like to include lowercase characters?");
   
-    if (lowerCaseInput) {
-      alert("Okay, include lowercase characters.");
-      console.log("Yes, include lowercase");
+if (lowerCaseInput) {
+alert("Okay, include lowercase characters.");
+console.log("Yes, include lowercase");
   
-    } else {
-      (!lowerCaseInput)
-      alert("Okay, don't include lowercase characters.");
-    };
+} else {
+(!lowerCaseInput)
+alert("Okay, don't include lowercase characters.");
+};
   
+//option to use uppercase characters
+ upperCaseInput =
+confirm("Would you like to include uppercase characters?")
+  
+if (upperCaseInput) {
+alert("Okay, include uppercase characters.");
+console.log("Yes, include uppercase");
 
-    //option to use uppercase characters
-    upperCaseInput =
-      confirm("Would you like to include uppercase characters?")
+} else {
+(!upperCaseInput)
+alert("Okay, don't include uppercase characters.");};
   
-    if (upperCaseInput) {
-      alert("Okay, include uppercase characters.");
-      console.log("Yes, include uppercase");
-    } else {
-      (!upperCaseInput)
-      alert("Okay, don't include uppercase characters.");
-    };
+// option to use special characters
+specialCharInput =
+confirm("Would you like to include special characters?")
   
-    // option to use special characters
-    specialCharInput =
-      confirm("Would you like to include special characters?")
+if (specialCharInput) {
+alert("Okay, include special characters.");
+console.log("Yes, include special characters");
+} else {
+(!specialCharInput)
+alert("Okay, don't include special characters.");
+};
   
-    if (specialCharInput) {
-      alert("Okay, include special characters.");
-      console.log("Yes, include special characters");
-    } else {
-      (!specialCharInput)
-      alert("Okay, don't include special characters.");
-    };
+//choose to include numbers
+numericCharInput =
+confirm("Would you like to include numbers?")
   
-    //choose to include numbers
-    numbers =
-      confirm("Would you like to include numbers?")
+if (numericCharInput) {
+alert("Okay, include numbers.");
+console.log("Yes, include numbers");
+} else {
+(!numericCharInput)
+alert("Okay, don't include numbers.");
+
+}if (lowerCaseInput === false && upperCaseInput === false && specialCharInput === false && numbericCharInput === false) {
+alert("Choose atleast one criteria to generate a password!");
+charOptions();
   
-    if (numbers) {
-      alert("Okay, include numbers.");
-      console.log("Yes, include numbers");
-    } else {
-      (!numbers)
-      alert("Okay, don't include numbers.");
-    }
-    if (lowerCaseInput === false && upperCaseInput === false && specialCharInput === false && numbers === false) {
-      alert("Choose atleast one criteria to generate a password!");
-      charOptions();
-    }
-  };
+};
 
 
 // inserting values to arrays according to user preference
 function generatePassword() {
-  if (lowerCaseInput === true) {
-    //add lowercase to array
-    newPasswordCharacters.push(lowerCase);
+if (lowerCaseInput === true) {
+//add lowercase to array
+newPasswordCharacters.push(lowerCase);
 }
 
-  if (upperCaseInput === true) {
-    //add uppercase to array
-    newPasswordCharacters.push(upperCase);
+if (upperCaseInput === true) {
+//add uppercase to array
+newPasswordCharacters.push(upperCase);
 }
 
   if (specialCharInput === true) {
-    //add special characters to array
-    newPasswordCharacters.push(specialChar);
+//add special characters to array
+newPasswordCharacters.push(specialChar);
 }
 
-  if (numbers === true) {
-    //add numbers to array
-    newPasswordCharacters.push(numbers);
+  if (numericCharInput === true) {
+//add numbers to array
+newPasswordCharacters.push(numbers);
 }
 characterString = newPasswordCharacters.join("");
-    console.log(charString);
+    console.log(characterString);
 
  // loop to choose characters with passwordLength
  for (var i = 0; i < passwordLength; i ++) {
@@ -150,3 +148,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+}
