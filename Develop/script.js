@@ -125,7 +125,8 @@ function generatePassword() {
     //add numbers to array
     newPasswordCharacters.push(numbers);
 }
-
+characterString = newPasswordCharacters.join("");
+    console.log(charString);
 
  // loop to choose characters with passwordLength
  for (var i = 0; i < passwordLength; i ++) {
