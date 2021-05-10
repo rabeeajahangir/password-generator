@@ -30,10 +30,11 @@ var newPasswordCharacters = [];
 
 // determining password length
 function lengthOptions() {
-passwordLength = prompt("How many characters would you like?");
+passwordLength = 
+prompt("How many characters would you like?");
 passwordLength = Number(passwordLength);
  console.log(passwordLength);
-if (passwordLength >= Number (8) && passwordLength <= Number (128) {
+if (passwordLength >= Number (8) && passwordLength <= Number (128)){
 alert(" Your password will be " +passwordLength+ " characters.");
 charOptions();
 
@@ -42,7 +43,6 @@ alert("Choose a value between 8 and 128.");
 lengthOptions();
 }
 }
-
 
 // function to determine which characters to use
 function charOptions() {
@@ -70,7 +70,8 @@ console.log("Yes, include uppercase");
 
 } else {
 (!upperCaseInput)
-alert("Okay, don't include uppercase characters.");};
+alert("Okay, don't include uppercase characters.");
+};
   
 // option to use special characters
 specialCharInput =
@@ -95,10 +96,10 @@ console.log("Yes, include numbers");
 (!numericCharInput)
 alert("Okay, don't include numbers.");
 
-}if (lowerCaseInput === false && upperCaseInput === false && specialCharInput === false && numbericCharInput === false) {
+}if (lowerCaseInput === false && upperCaseInput === false && specialCharInput === false && numericCharInput === false) {
 alert("Choose atleast one criteria to generate a password!");
 charOptions();
-  
+}
 };
 
 
@@ -149,4 +150,10 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-}
+
+
+
+//  lengthOptions();
+// //   generatePassword();
+//   writePassword ();
+// }
